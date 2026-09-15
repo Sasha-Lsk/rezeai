@@ -138,6 +138,9 @@ The built-in Core plugin is always available."</string>
     <string name="side_sheet_accessibility_pane_title">Side Sheet</string>
     <string name="thinking_hint">Let the model reason before answering (supported models only).</string>
     <string name="thinking_label">Thinking</string>
+    <string name="agent_settings_title">Agent</string>
+    <string name="auto_resume_label">Auto-resume the agent after errors</string>
+    <string name="auto_resume_desc">When enabled, RezeAI automatically resumes the AI agent after any server error (429, 5xx, network issues) or agent error (interrupted file/command operations). It retries every 2 seconds until you stop it with the Stop button.</string>
     <string name="watermark_label_prefix">"AdMob - "</string>
     <string name="zxing_app_name">Barcode Scanner</string>
     <string name="zxing_button_ok">OK</string>

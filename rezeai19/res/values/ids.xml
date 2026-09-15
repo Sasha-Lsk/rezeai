@@ -569,4 +569,5 @@
     <item type="id" name="custom_provider_save" />
     <item type="id" name="model_search" />
     <item type="id" name="models_refresh" />
+    <item type="id" name="auto_resume" />
 </resources>
