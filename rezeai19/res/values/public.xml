@@ -3048,6 +3048,7 @@
     <public type="id" name="custom_provider_api_key" id="0x7f0902a5" />
     <public type="id" name="custom_provider_model" id="0x7f0902a6" />
     <public type="id" name="custom_provider_save" id="0x7f0902a7" />
+    <public type="id" name="custom_provider_auto_retry" id="0x7f0902aa" />
     <public type="id" name="model_search" id="0x7f0902a8" />
     <public type="id" name="models_refresh" id="0x7f0902a9" />
     <public type="integer" name="abc_config_activityDefaultDur" id="0x7f0a0000" />

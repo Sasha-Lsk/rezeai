@@ -539,6 +539,28 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
+    iget-object v0, p0, Lapp/reze/ai/ui/SettingsActivity;->J:La4;
+
+    iget-object v0, v0, La4;->j:Landroid/content/SharedPreferences;
+
+    const v1, 0x7f0902aa
+
+    invoke-virtual {p0, v1}, Lz5;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/CompoundButton;
+
+    const-string v2, "custom_provider_auto_retry"
+
+    const/4 v3, 0x0
+
+    invoke-interface {v0, v2, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    invoke-virtual {v1, v0}, Landroid/widget/CompoundButton;->setChecked(Z)V
+
     const v0, 0x7f0902a7
 
     invoke-virtual {p0, v0}, Lz5;->findViewById(I)Landroid/view/View;
@@ -642,6 +664,22 @@
     const-string v2, "custom_provider_model"
 
     invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    const v1, 0x7f0902aa
+
+    invoke-virtual {p0, v1}, Lz5;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/CompoundButton;
+
+    invoke-virtual {v1}, Landroid/widget/CompoundButton;->isChecked()Z
+
+    move-result v1
+
+    const-string v2, "custom_provider_auto_retry"
+
+    invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 

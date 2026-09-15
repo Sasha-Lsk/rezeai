@@ -89,6 +89,28 @@
                 android:layout_marginTop="16.0dip"
                 android:text="Save provider and reload models"
                 app:backgroundTint="@color/reze_crimson" />
+            <TextView
+                android:textSize="14.0sp"
+                android:textColor="@color/reze_on_surface_muted"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18.0dip"
+                android:text="Agent auto-resume" />
+            <TextView
+                android:textSize="13.0sp"
+                android:textColor="@color/reze_on_surface_muted"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2.0dip"
+                android:text="When on, the agent automatically restarts every 2 seconds after any server error (HTTP 429/5xx, network failures) or any tool/command execution error, until you press Stop." />
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:textSize="16.0sp"
+                android:textColor="@color/reze_on_surface"
+                android:id="@id/custom_provider_auto_retry"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6.0dip"
+                android:text="Auto-resume agent on errors (every 2s)" />
             <View
                 android:background="@color/reze_outline"
                 android:layout_width="fill_parent"
