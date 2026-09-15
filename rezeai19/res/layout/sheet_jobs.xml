@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@color/reze_surface"
+    android:paddingTop="6.0dip"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="8.0dip"
+        android:paddingBottom="8.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20.0dip"
+        android:paddingEnd="8.0dip"
+        android:paddingVertical="8.0dip">
+        <TextView
+            android:textSize="17.0sp"
+            android:textStyle="bold"
+            android:textColor="@color/reze_on_surface"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:text="@string/processes"
+            android:layout_weight="1.0" />
+        <TextView
+            android:textSize="13.0sp"
+            android:textColor="@color/reze_on_surface_muted"
+            android:id="@id/jobs_clear"
+            android:background="?selectableItemBackgroundBorderless"
+            android:padding="10.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clear finished" />
+        <ImageButton
+            android:id="@id/jobs_close"
+            android:background="?selectableItemBackgroundBorderless"
+            android:padding="10.0dip"
+            android:layout_width="42.0dip"
+            android:layout_height="42.0dip"
+            android:src="@drawable/ic_close_24"
+            android:scaleType="fitCenter"
+            android:tint="@color/reze_on_surface_muted"
+            android:contentDescription="@string/nav_close" />
+    </LinearLayout>
+    <View
+        android:background="@color/reze_outline"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip" />
+    <TextView
+        android:textSize="14.0sp"
+        android:textColor="@color/reze_on_surface_muted"
+        android:gravity="center"
+        android:id="@id/jobs_empty"
+        android:padding="28.0dip"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="No background processes." />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@id/jobs_list"
+        android:paddingBottom="8.0dip"
+        android:scrollbars="none"
+        android:clipToPadding="false"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0" />
+</LinearLayout>

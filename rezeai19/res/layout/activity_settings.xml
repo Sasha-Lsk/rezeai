@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@id/toolbar"
+        android:background="@color/reze_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="?actionBarSize"
+        app:navigationIcon="@drawable/ic_arrow_back_24"
+        app:title="@string/settings_title"
+        app:titleTextColor="@color/reze_on_surface" />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="20.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="24.0sp"
+                android:textStyle="bold"
+                android:textColor="@color/reze_on_surface"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Custom AI provider"
+                android:fontFamily="@font/space_grotesk" />
+            <TextView
+                android:textSize="14.0sp"
+                android:textColor="@color/reze_on_surface_muted"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6.0dip"
+                android:text="Set the provider address and model. In OpenAI-compatible mode use the provider root, an address ending in /v1, or the full /chat/completions endpoint: the app adds each endpoint only once. Otherwise Base URL is used exactly as entered as the messages endpoint; enter the model manually." />
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:textSize="16.0sp"
+                android:textColor="@color/reze_on_surface"
+                android:id="@id/custom_provider_compatible"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16.0dip"
+                android:checked="true"
+                android:text="OpenAI-compatible" />
+            <EditText
+                android:textSize="16.0sp"
+                android:textColor="@color/reze_on_surface"
+                android:textColorHint="@color/reze_on_surface_muted"
+                android:id="@id/custom_provider_base_url"
+                android:background="@drawable/bg_input"
+                android:padding="18.0dip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12.0dip"
+                android:hint="Base URL or exact endpoint URL"
+                android:inputType="textUri" />
+            <EditText
+                android:textSize="16.0sp"
+                android:textColor="@color/reze_on_surface"
+                android:textColorHint="@color/reze_on_surface_muted"
+                android:id="@id/custom_provider_api_key"
+                android:background="@drawable/bg_input"
+                android:padding="18.0dip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:hint="api key"
+                android:inputType="textPassword" />
+            <EditText
+                android:textSize="16.0sp"
+                android:textColor="@color/reze_on_surface"
+                android:textColorHint="@color/reze_on_surface_muted"
+                android:id="@id/custom_provider_model"
+                android:background="@drawable/bg_input"
+                android:padding="18.0dip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:hint="id model"
+                android:inputType="text" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@id/custom_provider_save"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16.0dip"
+                android:text="Save provider and reload models"
+                app:backgroundTint="@color/reze_crimson" />
+            <View
+                android:background="@color/reze_outline"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:layout_marginTop="28.0dip"
+                android:layout_marginBottom="28.0dip" />
+            <TextView
+                android:textSize="16.0sp"
+                android:textStyle="bold"
+                android:textColor="@color/reze_on_surface"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transfer chats" />
+            <TextView
+                android:textSize="14.0sp"
+                android:textColor="@color/reze_on_surface_muted"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4.0dip"
+                android:text="Back up or move all chats (and their project files) as a .zip, or beam them to another device by QR. For QR transfer both devices must be on the same Wi-Fi/LAN." />
+            <com.google.android.material.button.MaterialButton
+                android:id="@id/export_button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16.0dip"
+                android:text="Export chats"
+                app:backgroundTint="@color/reze_crimson"
+                app:icon="@drawable/ic_open_in_new_24" />
+            <com.google.android.material.button.MaterialButton
+                android:textColor="@color/reze_on_surface"
+                android:id="@id/import_button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:text="Import chats"
+                app:icon="@drawable/ic_folder_open_24"
+                app:iconTint="@color/reze_on_surface"
+                app:strokeColor="@color/reze_outline"
+                style="@style/Widget.Material3.Button.OutlinedButton" />
+            <View
+                android:background="@color/reze_outline"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:layout_marginTop="28.0dip"
+                android:layout_marginBottom="28.0dip"
+                android:layout_marginVertical="28.0dip" />
+            <TextView
+                android:textSize="16.0sp"
+                android:textStyle="bold"
+                android:textColor="@color/reze_on_surface"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="System prompt" />
+            <TextView
+                android:textSize="14.0sp"
+                android:textColor="@color/reze_on_surface_muted"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4.0dip"
+                android:text="The instructions RezeAI follows in every chat. Edit it to change how the assistant behaves. Leave it as the default unless you know what you're changing." />
+            <com.google.android.material.button.MaterialButton
+                android:textColor="@color/reze_on_surface"
+                android:id="@id/edit_prompt_button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16.0dip"
+                android:text="Edit system prompt"
+                app:icon="@drawable/ic_terminal_24"
+                app:iconTint="@color/reze_on_surface"
+                app:strokeColor="@color/reze_outline"
+                style="@style/Widget.Material3.Button.OutlinedButton" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@id/privacy_section"
+                android:visibility="gone"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <View
+                    android:background="@color/reze_outline"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0dip"
+                    android:layout_marginTop="28.0dip"
+                    android:layout_marginBottom="28.0dip"
+                    android:layout_marginVertical="28.0dip" />
+                <TextView
+                    android:textSize="16.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/reze_on_surface"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Privacy" />
+                <TextView
+                    android:textSize="14.0sp"
+                    android:textColor="@color/reze_on_surface_muted"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4.0dip"
+                    android:text="Change your choices for how ads use your data." />
+                <com.google.android.material.button.MaterialButton
+                    android:textColor="@color/reze_on_surface"
+                    android:id="@id/privacy_options_button"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16.0dip"
+                    android:text="Manage ad privacy"
+                    app:strokeColor="@color/reze_outline"
+                    style="@style/Widget.Material3.Button.OutlinedButton" />
+            </LinearLayout>
+            <View
+                android:background="@color/reze_outline"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:layout_marginTop="28.0dip"
+                android:layout_marginBottom="28.0dip"
+                android:layout_marginVertical="28.0dip" />
+            <TextView
+                android:textSize="16.0sp"
+                android:textStyle="bold"
+                android:textColor="@color/reze_crimson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Danger zone" />
+            <com.google.android.material.button.MaterialButton
+                android:textColor="@color/reze_crimson"
+                android:id="@id/delete_all_button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12.0dip"
+                android:text="Delete all chats"
+                app:icon="@drawable/ic_close_24"
+                app:iconTint="@color/reze_crimson"
+                app:strokeColor="@color/reze_crimson"
+                style="@style/Widget.Material3.Button.OutlinedButton" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

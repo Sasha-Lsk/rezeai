@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8.0dip"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout
+        android:id="@id/media_frame"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@id/file_image"
+            android:background="@drawable/bg_thumb"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:maxHeight="240.0dip"
+            android:contentDescription="@string/attach"
+            android:clipToOutline="true" />
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@id/play_overlay"
+            android:visibility="gone"
+            android:layout_width="64.0dip"
+            android:layout_height="64.0dip"
+            android:src="@drawable/ic_play_circle_64"
+            android:alpha="0.92" />
+        <ImageView
+            android:layout_gravity="end|center|top"
+            android:id="@id/download_btn"
+            android:background="@drawable/bg_media_btn"
+            android:padding="9.0dip"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_width="40.0dip"
+            android:layout_height="40.0dip"
+            android:layout_margin="10.0dip"
+            android:src="@drawable/ic_download_24"
+            android:contentDescription="@string/download" />
+    </FrameLayout>
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:id="@id/share_row"
+        android:background="?selectableItemBackground"
+        android:paddingLeft="10.0dip"
+        android:paddingTop="8.0dip"
+        android:paddingRight="10.0dip"
+        android:paddingBottom="8.0dip"
+        android:focusable="true"
+        android:visibility="gone"
+        android:clickable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6.0dip"
+        android:paddingHorizontal="10.0dip"
+        android:paddingVertical="8.0dip">
+        <ImageView
+            android:layout_width="18.0dip"
+            android:layout_height="18.0dip"
+            android:src="@drawable/ic_share_24"
+            android:tint="@color/reze_crimson"
+            android:layout_marginEnd="8.0dip" />
+        <TextView
+            android:textSize="14.0sp"
+            android:textStyle="bold"
+            android:textColor="@color/reze_crimson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/share" />
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:id="@id/file_row"
+        android:background="@drawable/bg_attach_card"
+        android:paddingLeft="14.0dip"
+        android:paddingTop="12.0dip"
+        android:paddingRight="14.0dip"
+        android:paddingBottom="12.0dip"
+        android:focusable="true"
+        android:visibility="gone"
+        android:clickable="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="14.0dip"
+        android:paddingVertical="12.0dip">
+        <ImageView
+            android:id="@id/file_icon"
+            android:layout_width="26.0dip"
+            android:layout_height="26.0dip"
+            android:src="@drawable/ic_document_24"
+            android:tint="@color/reze_crimson"
+            android:layout_marginEnd="12.0dip" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0">
+            <TextView
+                android:textSize="14.0sp"
+                android:textColor="@color/reze_on_surface"
+                android:ellipsize="middle"
+                android:id="@id/file_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1" />
+            <TextView
+                android:textSize="12.0sp"
+                android:textColor="@color/reze_on_surface_muted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tap to open" />
+        </LinearLayout>
+        <ImageView
+            android:layout_width="20.0dip"
+            android:layout_height="20.0dip"
+            android:src="@drawable/ic_open_in_new_24"
+            android:tint="@color/reze_on_surface_muted" />
+    </LinearLayout>
+</LinearLayout>

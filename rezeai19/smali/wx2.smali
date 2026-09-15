@@ -1,0 +1,185 @@
+.class public final Lwx2;
+.super Ldy2;
+.source "r8-map-id-470557f1a27505dd4f644b75d3d1fb6bd6411df5b0b04892d8eb8a2e55b03e6f"
+
+
+# instance fields
+.field public final transient o:I
+
+.field public final transient p:I
+
+.field public final synthetic q:Ldy2;
+
+
+# direct methods
+.method public constructor <init>(Ldy2;II)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lwx2;->q:Ldy2;
+
+    .line 3
+    const/4 p1, 0x3
+
+    .line 4
+    invoke-direct {p0, p1}, Lhd1;-><init>(I)V
+
+    .line 7
+    iput p2, p0, Lwx2;->o:I
+
+    .line 9
+    iput p3, p0, Lwx2;->p:I
+
+    .line 11
+    return-void
+.end method
+
+
+# virtual methods
+.method public final get(I)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lwx2;->p:I
+
+    .line 3
+    invoke-static {p1, v0}, Lt05;->a(II)V
+
+    .line 6
+    iget v0, p0, Lwx2;->o:I
+
+    .line 8
+    add-int/2addr p1, v0
+
+    .line 9
+    iget-object p0, p0, Lwx2;->q:Ldy2;
+
+    .line 11
+    invoke-interface {p0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    .line 14
+    move-result-object p0
+
+    .line 15
+    return-object p0
+.end method
+
+.method public final h()I
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lwx2;->q:Ldy2;
+
+    .line 3
+    invoke-virtual {v0}, Lhd1;->i()I
+
+    .line 6
+    move-result v0
+
+    .line 7
+    iget v1, p0, Lwx2;->o:I
+
+    .line 9
+    add-int/2addr v0, v1
+
+    .line 10
+    iget p0, p0, Lwx2;->p:I
+
+    .line 12
+    add-int/2addr v0, p0
+
+    .line 13
+    return v0
+.end method
+
+.method public final i()I
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lwx2;->q:Ldy2;
+
+    .line 3
+    invoke-virtual {v0}, Lhd1;->i()I
+
+    .line 6
+    move-result v0
+
+    .line 7
+    iget p0, p0, Lwx2;->o:I
+
+    .line 9
+    add-int/2addr v0, p0
+
+    .line 10
+    return v0
+.end method
+
+.method public final j()[Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lwx2;->q:Ldy2;
+
+    .line 3
+    invoke-virtual {p0}, Lhd1;->j()[Ljava/lang/Object;
+
+    .line 6
+    move-result-object p0
+
+    .line 7
+    return-object p0
+.end method
+
+.method public final k(II)Ldy2;
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lwx2;->p:I
+
+    .line 3
+    invoke-static {p1, p2, v0}, Lt05;->b(III)V
+
+    .line 6
+    iget v0, p0, Lwx2;->o:I
+
+    .line 8
+    add-int/2addr p1, v0
+
+    .line 9
+    add-int/2addr p2, v0
+
+    .line 10
+    iget-object p0, p0, Lwx2;->q:Ldy2;
+
+    .line 12
+    invoke-virtual {p0, p1, p2}, Ldy2;->k(II)Ldy2;
+
+    .line 15
+    move-result-object p0
+
+    .line 16
+    return-object p0
+.end method
+
+.method public final size()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lwx2;->p:I
+
+    .line 3
+    return p0
+.end method
+
+.method public final bridge synthetic subList(II)Ljava/util/List;
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0, p1, p2}, Lwx2;->k(II)Ldy2;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method

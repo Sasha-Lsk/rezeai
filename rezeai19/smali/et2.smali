@@ -1,0 +1,46 @@
+.class public final Let2;
+.super Ljava/lang/Object;
+.source "r8-map-id-470557f1a27505dd4f644b75d3d1fb6bd6411df5b0b04892d8eb8a2e55b03e6f"
+
+# interfaces
+.implements Lft2;
+
+
+# instance fields
+.field public final a:Ljava/util/Map;
+
+
+# direct methods
+.method public constructor <init>(Ljava/util/Map;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 4
+    iput-object p1, p0, Let2;->a:Ljava/util/Map;
+
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(ILjava/lang/String;)Lja3;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Let2;->a:Ljava/util/Map;
+
+    .line 3
+    invoke-interface {p0, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lja3;
+
+    .line 9
+    return-object p0
+.end method

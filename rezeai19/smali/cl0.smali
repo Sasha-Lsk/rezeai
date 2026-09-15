@@ -1,0 +1,120 @@
+.class public abstract Lcl0;
+.super Ljava/lang/Object;
+.source "r8-map-id-470557f1a27505dd4f644b75d3d1fb6bd6411df5b0b04892d8eb8a2e55b03e6f"
+
+
+# static fields
+.field public static final a:[I
+
+.field public static final b:Ljava/lang/String;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    .line 1
+    const v0, 0x101009e
+
+    .line 4
+    const v1, 0x10100a7
+
+    .line 7
+    filled-new-array {v0, v1}, [I
+
+    .line 10
+    move-result-object v0
+
+    .line 11
+    sput-object v0, Lcl0;->a:[I
+
+    .line 13
+    const-class v0, Lcl0;
+
+    .line 15
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    .line 18
+    move-result-object v0
+
+    .line 19
+    sput-object v0, Lcl0;->b:Ljava/lang/String;
+
+    .line 21
+    return-void
+.end method
+
+.method public static a(Landroid/content/res/ColorStateList;)Landroid/content/res/ColorStateList;
+    .locals 3
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    if-eqz p0, :cond_1
+
+    .line 4
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 6
+    const/16 v2, 0x1b
+
+    .line 8
+    if-gt v1, v2, :cond_0
+
+    .line 10
+    invoke-virtual {p0}, Landroid/content/res/ColorStateList;->getDefaultColor()I
+
+    .line 13
+    move-result v1
+
+    .line 14
+    invoke-static {v1}, Landroid/graphics/Color;->alpha(I)I
+
+    .line 17
+    move-result v1
+
+    .line 18
+    if-nez v1, :cond_0
+
+    .line 20
+    sget-object v1, Lcl0;->a:[I
+
+    .line 22
+    invoke-virtual {p0, v1, v0}, Landroid/content/res/ColorStateList;->getColorForState([II)I
+
+    .line 25
+    move-result v0
+
+    .line 26
+    invoke-static {v0}, Landroid/graphics/Color;->alpha(I)I
+
+    .line 29
+    move-result v0
+
+    .line 30
+    if-eqz v0, :cond_0
+
+    .line 32
+    sget-object v0, Lcl0;->b:Ljava/lang/String;
+
+    .line 34
+    const-string v1, "Use a non-transparent color for the default color as it will be used to finish ripple animations."
+
+    .line 36
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 39
+    :cond_0
+    return-object p0
+
+    .line 40
+    :cond_1
+    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    .line 43
+    move-result-object p0
+
+    .line 44
+    return-object p0
+.end method

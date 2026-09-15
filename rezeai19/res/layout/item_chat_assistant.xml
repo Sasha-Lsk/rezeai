@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:paddingLeft="14.0dip"
+    android:paddingTop="5.0dip"
+    android:paddingRight="14.0dip"
+    android:paddingBottom="5.0dip"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="14.0dip"
+    android:paddingVertical="5.0dip"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:textSize="16.0sp"
+        android:textColor="@color/bubble_assistant_text"
+        android:id="@id/message_text"
+        android:background="@drawable/bg_bubble_assistant"
+        android:paddingLeft="16.0dip"
+        android:paddingTop="11.0dip"
+        android:paddingRight="16.0dip"
+        android:paddingBottom="11.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16.0dip"
+        android:paddingVertical="11.0dip" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@id/file_container"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40.0dip" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2.0dip">
+        <ImageButton
+            android:id="@id/action_copy"
+            android:background="?selectableItemBackgroundBorderless"
+            android:padding="8.0dip"
+            android:layout_width="38.0dip"
+            android:layout_height="38.0dip"
+            android:src="@drawable/ic_copy_24"
+            android:scaleType="fitCenter"
+            android:contentDescription="Copy" />
+        <ImageButton
+            android:id="@id/action_speak"
+            android:background="?selectableItemBackgroundBorderless"
+            android:padding="8.0dip"
+            android:layout_width="38.0dip"
+            android:layout_height="38.0dip"
+            android:src="@drawable/ic_volume_24"
+            android:scaleType="fitCenter"
+            android:contentDescription="Read aloud" />
+    </LinearLayout>
+</LinearLayout>

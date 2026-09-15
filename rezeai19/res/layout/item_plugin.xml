@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="14.0dip"
+    android:layout_marginTop="6.0dip"
+    android:layout_marginRight="14.0dip"
+    android:layout_marginBottom="6.0dip"
+    android:layout_marginHorizontal="14.0dip"
+    android:layout_marginVertical="6.0dip"
+    app:cardBackgroundColor="@color/reze_surface"
+    app:cardCornerRadius="16.0dip"
+    app:cardElevation="0.0dip"
+    app:strokeColor="@color/reze_outline"
+    app:strokeWidth="1.0dip"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="17.0sp"
+                android:textStyle="bold"
+                android:textColor="@color/reze_on_surface"
+                android:id="@id/plugin_name"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0" />
+            <TextView
+                android:textSize="11.0sp"
+                android:textColor="@color/reze_on_surface_muted"
+                android:id="@id/plugin_badge"
+                android:background="@drawable/bg_badge"
+                android:paddingLeft="10.0dip"
+                android:paddingTop="3.0dip"
+                android:paddingRight="10.0dip"
+                android:paddingBottom="3.0dip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10.0dip"
+                android:paddingVertical="3.0dip" />
+        </LinearLayout>
+        <TextView
+            android:textSize="14.0sp"
+            android:textColor="@color/reze_on_surface_muted"
+            android:id="@id/plugin_description"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4.0dip" />
+        <TextView
+            android:textSize="13.0sp"
+            android:textColor="@color/reze_on_surface"
+            android:id="@id/plugin_tools"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

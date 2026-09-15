@@ -1,0 +1,21 @@
+.class public abstract Llp4;
+.super Ljava/lang/Object;
+.source "r8-map-id-470557f1a27505dd4f644b75d3d1fb6bd6411df5b0b04892d8eb8a2e55b03e6f"
+
+
+# virtual methods
+.method public abstract a(Lz5;Ljava/lang/Object;)Landroid/content/Intent;
+.end method
+
+.method public b(Lz5;Ljava/lang/Object;)Lgd3;
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return-object p0
+.end method
+
+.method public abstract c(ILandroid/content/Intent;)Ljava/lang/Object;
+.end method

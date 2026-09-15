@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:padding="4.0dip"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="8.0dip"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <FrameLayout
+            android:layout_width="64.0dip"
+            android:layout_height="64.0dip">
+            <ImageView
+                android:id="@id/thumb"
+                android:background="@drawable/bg_thumb"
+                android:layout_width="64.0dip"
+                android:layout_height="64.0dip"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/attach"
+                android:clipToOutline="true" />
+            <TextView
+                android:textSize="13.0sp"
+                android:textStyle="bold"
+                android:textColor="@color/reze_on_surface_muted"
+                android:gravity="center"
+                android:id="@id/ext"
+                android:visibility="gone"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+        </FrameLayout>
+        <TextView
+            android:textSize="10.0sp"
+            android:textColor="@color/reze_on_surface_muted"
+            android:ellipsize="middle"
+            android:gravity="center"
+            android:id="@id/name"
+            android:layout_width="64.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3.0dip"
+            android:maxLines="1" />
+    </LinearLayout>
+    <ImageButton
+        android:layout_gravity="end|center|top"
+        android:id="@id/remove"
+        android:background="@drawable/bg_remove"
+        android:padding="4.0dip"
+        android:layout_width="22.0dip"
+        android:layout_height="22.0dip"
+        android:src="@drawable/ic_close_24"
+        android:scaleType="fitCenter"
+        android:contentDescription="Remove" />
+</FrameLayout>

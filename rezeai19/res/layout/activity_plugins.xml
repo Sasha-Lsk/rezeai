@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@id/toolbar"
+        android:background="@color/reze_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="?actionBarSize"
+        app:navigationIcon="@drawable/ic_menu_24"
+        app:title="@string/service_title"
+        app:titleTextColor="@color/reze_on_surface" />
+    <TextView
+        android:textColor="@color/reze_on_surface_muted"
+        android:id="@id/empty"
+        android:padding="24.0dip"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/service_empty" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@id/plugin_list"
+        android:paddingTop="8.0dip"
+        android:paddingBottom="8.0dip"
+        android:clipToPadding="false"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingVertical="8.0dip" />
+</LinearLayout>

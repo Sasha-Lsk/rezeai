@@ -1,0 +1,85 @@
+.class public abstract Ltj;
+.super Ljava/lang/Object;
+.source "r8-map-id-470557f1a27505dd4f644b75d3d1fb6bd6411df5b0b04892d8eb8a2e55b03e6f"
+
+
+# direct methods
+.method public static a()Z
+    .locals 4
+
+    .line 1
+    invoke-static {}, Lorg/conscrypt/Conscrypt;->version()Lorg/conscrypt/Conscrypt$Version;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, Lorg/conscrypt/Conscrypt$Version;->major()I
+
+    .line 8
+    move-result v1
+
+    .line 9
+    const/4 v2, 0x2
+
+    .line 10
+    const/4 v3, 0x1
+
+    .line 11
+    if-eq v1, v2, :cond_0
+
+    .line 13
+    invoke-virtual {v0}, Lorg/conscrypt/Conscrypt$Version;->major()I
+
+    .line 16
+    move-result v0
+
+    .line 17
+    if-le v0, v2, :cond_2
+
+    .line 19
+    goto :goto_0
+
+    .line 20
+    :cond_0
+    invoke-virtual {v0}, Lorg/conscrypt/Conscrypt$Version;->minor()I
+
+    .line 23
+    move-result v1
+
+    .line 24
+    if-eq v1, v3, :cond_1
+
+    .line 26
+    invoke-virtual {v0}, Lorg/conscrypt/Conscrypt$Version;->minor()I
+
+    .line 29
+    move-result v0
+
+    .line 30
+    if-le v0, v3, :cond_2
+
+    .line 32
+    goto :goto_0
+
+    .line 33
+    :cond_1
+    invoke-virtual {v0}, Lorg/conscrypt/Conscrypt$Version;->patch()I
+
+    .line 36
+    move-result v0
+
+    .line 37
+    if-ltz v0, :cond_2
+
+    .line 39
+    :goto_0
+    return v3
+
+    .line 40
+    :cond_2
+    const/4 v0, 0x0
+
+    .line 41
+    return v0
+.end method
