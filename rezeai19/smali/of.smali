@@ -20,6 +20,9 @@
 
 .field public volatile f:Z
 
+# Auto-resume flag (set by the UI when auto-retry on errors is enabled).
+.field public volatile autoResume:Z
+
 .field public final g:I
 
 .field public final h:Leg;

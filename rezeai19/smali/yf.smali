@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 13
+    .locals 14
 
     .line 1
     iget v0, p0, Lyf;->i:I
@@ -344,8 +344,34 @@
     .line 198
     const/16 v1, 0x9
 
+    # Do not resume a run the user has already stopped: Lof;->f doubles as the
+    # stop flag (the Stop button sets it true and Lof.f() resets it on entry).
+    iget-object v2, v0, Lapp/reze/ai/ui/ChatFragment;->y0:Lof;
+
+    if-eqz v2, :agent_not_stopped
+
+    iget-boolean v2, v2, Lof;->f:Z
+
+    if-eqz v2, :agent_not_stopped
+
+    return-void
+
+    :agent_not_stopped
+
     .line 200
     :try_start_0
+    iget-object v2, v0, Lapp/reze/ai/ui/ChatFragment;->w0:La4;
+
+    iget-object v2, v2, La4;->j:Landroid/content/SharedPreferences;
+
+    const-string v3, "agent_auto_resume"
+
+    const/4 v4, 0x0
+
+    invoke-interface {v2, v3, v4}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v12
+
     iget-object v2, v0, Lapp/reze/ai/ui/ChatFragment;->y0:Lof;
 
     .line 202
@@ -401,14 +427,84 @@
 
     .line 238
     :catchall_0
-    move-exception p0
+    # Auto-resume on an error inside the agent loop proper (tool/command,
+    # streaming, JSON, etc.). Retry every 2 seconds while the agent still
+    # has not been stopped by the user (Lof;->f references the agent's stop flag).
+    move-exception v2
 
-    .line 239
+    iget-object v3, v0, Lapp/reze/ai/ui/ChatFragment;->y0:Lof;
+
+    if-eqz v3, :catchall_rethrow
+
+    iget-boolean v3, v3, Lof;->autoResume:Z
+
+    if-nez v3, :catchall_rethrow
+
+    iget-object v3, v0, Lapp/reze/ai/ui/ChatFragment;->y0:Lof;
+
+    iget-boolean v3, v3, Lof;->f:Z
+
+    if-nez v3, :catchall_rethrow
+
+    iget-object v3, v0, Lapp/reze/ai/ui/ChatFragment;->c0:Landroid/os/Handler;
+
+    new-instance v6, Lyf;
+
+    const/4 v7, 0x5
+
+    iget-object v8, p0, Lyf;->k:Ljava/lang/String;
+
+    invoke-direct {v6, v0, v8, v7}, Lyf;-><init>(Lapp/reze/ai/ui/ChatFragment;Ljava/lang/String;I)V
+
+    const-wide/16 v7, 0x7d0
+
+    invoke-virtual {v3, v6, v7, v8}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    goto :goto_7
+
+    :catchall_rethrow
+    move-object p0, v2
+
     goto :goto_8
 
     .line 240
     :catch_0
-    move-exception p0
+    move-exception v2
+
+    # Auto-resume on a server error thrown by Lof;->f (429, 5xx, network).
+    # Retry every 2 seconds while the agent has not been stopped by the user.
+    iget-object v3, v0, Lapp/reze/ai/ui/ChatFragment;->y0:Lof;
+
+    if-eqz v3, :catch_0_default
+
+    iget-boolean v3, v3, Lof;->autoResume:Z
+
+    if-nez v3, :catch_0_default
+
+    iget-object v3, v0, Lapp/reze/ai/ui/ChatFragment;->y0:Lof;
+
+    iget-boolean v3, v3, Lof;->f:Z
+
+    if-nez v3, :catch_0_default
+
+    iget-object v3, v0, Lapp/reze/ai/ui/ChatFragment;->c0:Landroid/os/Handler;
+
+    new-instance v4, Lyf;
+
+    const/4 v5, 0x5
+
+    iget-object v6, p0, Lyf;->k:Ljava/lang/String;
+
+    invoke-direct {v4, v0, v6, v5}, Lyf;-><init>(Lapp/reze/ai/ui/ChatFragment;Ljava/lang/String;I)V
+
+    const-wide/16 v6, 0x7d0
+
+    invoke-virtual {v3, v4, v6, v7}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    goto :goto_7
+
+    :catch_0_default
+    move-object p0, v2
 
     .line 241
     goto :goto_6
@@ -417,6 +513,10 @@
     :cond_8
     :goto_3
     iget-object v2, v0, Lapp/reze/ai/ui/ChatFragment;->y0:Lof;
+
+    # Refresh the agent's auto-resume flag on every send so the setting
+    # takes effect immediately after it is toggled in the settings screen.
+    iput-boolean v12, v2, Lof;->autoResume:Z
 
     .line 244
     invoke-virtual {v2, p0}, Lof;->f(Ljava/lang/String;)Lyz3;

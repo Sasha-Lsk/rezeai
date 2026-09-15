@@ -82,6 +82,41 @@
                 android:layout_marginTop="10.0dip"
                 android:hint="id model"
                 android:inputType="text" />
+            <View
+                android:background="@color/reze_outline"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:layout_marginTop="20.0dip" />
+            <TextView
+                android:textSize="24.0sp"
+                android:textStyle="bold"
+                android:textColor="@color/reze_on_surface"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16.0dip"
+                android:text="@string/agent_settings_title"
+                android:fontFamily="@font/space_grotesk" />
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:textSize="16.0sp"
+                android:textColor="@color/reze_on_surface"
+                android:id="@id/auto_resume"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12.0dip"
+                android:checked="false"
+                android:text="@string/auto_resume_label" />
+            <TextView
+                android:textSize="14.0sp"
+                android:textColor="@color/reze_on_surface_muted"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6.0dip"
+                android:text="@string/auto_resume_desc" />
+            <View
+                android:background="@color/reze_outline"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:layout_marginTop="20.0dip" />
             <com.google.android.material.button.MaterialButton
                 android:id="@id/custom_provider_save"
                 android:layout_width="fill_parent"
